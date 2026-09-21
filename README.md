@@ -1,4 +1,4 @@
-# Labsignment: HTTP
+# Lab 2 Assignment: HTTP
 
 Assignment instructions [are on the course website](https://cmput404-fall2026.github.io/labs/http/).
 
