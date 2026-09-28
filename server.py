@@ -65,7 +65,7 @@ class LabServerTCPHandler(socketserver.StreamRequestHandler):
 
             self.send_line("HTTP/1.1 200 OK")
             self.send_line(f"Content-Type: {content_type}")
-            self.send_line(f"Content-Length: {len(body)}")
+            self.send_line(f"Content-Length: {len(body)}") #where do we use this value 
             self.send_line("Connection: close")
             self.send_line("")
             self.wfile.write(body)

@@ -33,11 +33,12 @@ class HTTPClient:
             path = "/" + parts[1]
         else:
             path = "/"
-        if server_part.startswith("["):
+        # Check if the server part is an IPv6 address
+        if server_part.startswith("["): #checking for IPv6 address and extracting host and port
              end = server_part.find("]")
              host = server_part[1:end]
              if ":" in server_part[end+1:]:
-                 port = int(server_part[end+2:])
+                 port = int(server_part[end+2:]) #if there is a port specified after the IPv6 address, extract it
              else:
                  port = 80
         elif ":" in server_part:
@@ -227,3 +228,4 @@ if __name__ == "__main__":
     if key is not None:
         args[key] = ""
     result = client.command(method, url, args)
+    print(result.body)
